@@ -1,5 +1,5 @@
-require "asana-god-contact/version"
-require 'asana-god-contact/asana_config'
+require 'asana-god-contact/version'
+require 'asana-god-contact/config'
 require 'asana-god-contact/asana_conector'
 require 'god/contact'
 
