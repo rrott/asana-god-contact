@@ -1,6 +1,6 @@
 require 'asana-god-contact/version'
 require 'asana-god-contact/config'
-require 'asana-god-contact/asana_conector'
+require 'asana-god-contact/asana_connector'
 require 'god/contact'
 
 module God
