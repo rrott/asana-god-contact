@@ -2,7 +2,7 @@ require 'asana-god-contact/version'
 require 'asana-god-contact/config'
 require 'asana-god-contact/asana_connector'
 require 'god/contact'
-
+require 'god'
 module God
   module Contacts
     class Asana < God::Contact
@@ -17,7 +17,7 @@ module God
 
       def valid?
         valid = true
-        AsanaConfig::PARAMS.each do |param|
+        AsanaGodContact::Config::PARAMS.each do |param|
           valid &= complain("Attribute #{param} must be specified", self) unless arg(param)
         end
         valid
