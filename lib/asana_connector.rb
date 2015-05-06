@@ -7,7 +7,7 @@ class AsanaConnector
   def initialize(options)
     AsanaConfig::PARAMS.each { |param| raise "Required option #{param} not set." unless options[param] }
     @options = options
-    @uri  = URI.parse(ASANA_URL)
+    @uri     = URI.parse(AsanaConfig::ASANA_URL)
   end
 
   def create_task

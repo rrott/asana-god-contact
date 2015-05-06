@@ -1,4 +1,4 @@
-require "asana_god_contact/version"
+require "asana-god-contact/version"
 require 'god/contact'
 
 module AsanaGodContact
