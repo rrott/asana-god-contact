@@ -1,7 +1,7 @@
 require 'json'
 require 'net/https'
-require 'asana_config'
-require 'stats'
+require 'asana-god-contact/stats'
+require 'asana-god-contact/asana_config'
 
 class AsanaConnector
   def initialize(options)
