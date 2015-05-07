@@ -1,11 +1,11 @@
+require 'god'
 require 'asana-god-contact/version'
 require 'asana-god-contact/config'
 require 'asana-god-contact/asana_connector'
-require 'god/contact'
-require 'god'
+
 module God
   module Contacts
-    class Asana < God::Contact
+    class Asana < Contact
       class << self
         attr_accessor :api_key, :workspace_id, :assignee, :projects, :folowers
         attr_accessor :format
@@ -41,7 +41,7 @@ module God
 
         self.info = "notified asana: #{arg(:workspace_id)}, #{arg(:assignee)}, project #{arg(:project)}"
       rescue Object => e
-        applog(nil, :info, "failed to notify asana: #{arg(:workspace_id)}, #{arg(:assignee)}, project #{arg(:project)}")
+        applog(nil, :info, "Failed to notify Asana: #{arg(:workspace_id)}, #{arg(:assignee)}, project #{arg(:project)}" )
         applog(nil, :debug, e.backtrace.join("\n"))
       end
     end

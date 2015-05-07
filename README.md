@@ -1,8 +1,6 @@
 # AsanaGodContact
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/asana-god-contact`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A God::Contacts class for sending notifications to Asana
 
 ## Installation
 
@@ -22,18 +20,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Configure our god file to use asana connector adding next code
+```ruby
+require 'asana-god-contact'
 
-## Development
+God.contact(:asana) do |c|
+  c.name = 'asana'
+  c.api_key       = "2D2R..........OG0iZru"
+  c.workspace_id  = "49.....860"
+  c.assignee      = "92.....302"
+  c.projects      = "28.....959"
+  c.folowers      = "92.....302"
+end
+```
+where "api_key" is the key you get from your asana
+other params are ids of workspace, user, project and followers. Followers can be an array.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+ Then add the name of your contact (c.name = 'asana') to be used as notification:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+  w.start_if do |start|
+    start.condition(:process_running) do |c|
+      c.running = false
+      c.notify = ['asana']
+    end
+  end
+  ```
+## Releasing
 
-## Contributing
+  gem build asana-god-contact.gemspec
+  gem inabox asana-god-contact-X.Y.Z.gem
 
-1. Fork it ( https://github.com/[my-github-username]/asana-god-contact/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request

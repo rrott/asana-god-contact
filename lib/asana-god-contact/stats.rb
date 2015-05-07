@@ -6,7 +6,7 @@ module AsanaGodContact
     def self.list
       ProcTable.ps{ |p|
         (@processes ||= "") << "id: #{p.pid} command: #{p.comm} \ncmdline: #{p.cmdline}\n\n"
-      }#.to_s
+      }
       @processes.to_s
     end
   end

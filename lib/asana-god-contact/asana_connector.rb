@@ -1,8 +1,9 @@
-require 'json'
-require 'net/https'
 require 'asana-god-contact/stats'
 require 'asana-god-contact/config'
 require 'asana-god-contact/logger'
+require 'net/https'
+require 'json'
+require 'god'
 
 module AsanaGodContact
   class Connector
@@ -21,7 +22,7 @@ module AsanaGodContact
       http.verify_mode = OpenSSL::SSL::VERIFY_PEER
       res = http.start { |http| http.request(request_params) }
 
-      AsanaGodContact::Logger.write_log_message JSON.parse(res.body)
+      AsanaGodContact::Logger.responce_message JSON.parse(res.body)
     end
 
     private
