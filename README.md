@@ -34,9 +34,10 @@ God.contact(:asana) do |c|
 end
 ```
 where "api_key" is the key you get from your asana
-other params are ids of workspace, user, project and followers. Followers can be an array.
 
- Then add the name of your contact (c.name = 'asana') to be used as notification:
+Other params are apropriate ids of workspace, user, project and followers. Followers can be an array.
+
+Add the name of your contact (c.name = 'asana') to be used as notification:
 
 ```ruby
   w.start_if do |start|
@@ -48,6 +49,7 @@ other params are ids of workspace, user, project and followers. Followers can be
   ```
 ## Releasing
 
+```ruby
   gem build asana-god-contact.gemspec
   gem inabox asana-god-contact-X.Y.Z.gem
-
+```
