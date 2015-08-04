@@ -22,6 +22,11 @@ class TestAsana < Minitest::Test
     time = Time.now
     body = "[#{time.strftime('%H:%M:%S')}] host - msg"
 
+    #AsanaGodContact::Connector.expects(:create_task).returns("blah")
+    #assert_equal "notified asana: test_workspace, test_assagnee, project", @asana.info
+    #Marshmallow::Connection.any_instance.expects(:speak).with('test_workspace', body)
+    #@asana.notify('msg', time, 'prio', 'cat', 'host')
+
       mock = MiniTest::Mock.new
       mock.expect(:call, 'create_task')
       AsanaGodContact::Connector.stub(:create_task, mock) do

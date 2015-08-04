@@ -1,7 +1,7 @@
 # AsanaGodContact
 
-A God::Contacts class for sending notifications to Asana
-
+A God::Contacts class for sending notifications to Asana. God is an easy to configure, easy to extend monitoring framework written in Ruby.
+http://godrb.com/
 ## Installation
 
 Add this line to your application's Gemfile:

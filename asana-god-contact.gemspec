@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Roman Rott"]
   spec.email         = ["roman.rott@gmail.com"]
 
-  spec.summary       = "A God::Contacts class for sending notifications to Asana"
-  spec.description   = "Allows to send notifications to Asana"
+  spec.summary       = "A God::Contacts class that allows to send notifications to Asana"
+  spec.description   = "A God::Contacts class for sending notifications to Asana. God is an easy to configure, easy to extend monitoring framework written in Ruby."
   spec.homepage      = "https://github.com/rrott/asana-god-contact"
   spec.license       = "GPL"
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "mocha", '~> 0'
-  spec.add_development_dependency "minitest", '~> 0'
+  spec.add_development_dependency "mocha", '~> 1'
+  spec.add_development_dependency "minitest", '~> 5.7'
 
 end
