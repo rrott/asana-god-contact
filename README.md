@@ -47,9 +47,3 @@ Add the name of your contact (c.name = 'asana') to be used as notification:
     end
   end
   ```
-## Releasing
-
-```ruby
-  gem build asana-god-contact.gemspec
-  gem inabox asana-god-contact-X.Y.Z.gem
-```
